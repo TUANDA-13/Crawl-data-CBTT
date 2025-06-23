@@ -1,1 +1,581 @@
 [2025-06-23T09:53:46.830Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T09:55:00.276Z] PROCESSING CODE: A32
+[2025-06-23T09:55:09.330Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T09:55:15.382Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T09:55:16.480Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T09:55:22.525Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T09:55:23.387Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T09:55:29.419Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T09:55:30.271Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T09:55:36.294Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T09:55:37.125Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T09:55:38.143Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T09:55:39.155Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T09:55:40.191Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T09:55:41.219Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T09:55:42.246Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T09:55:43.262Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T09:55:44.284Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T09:55:45.312Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T09:55:46.339Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T09:55:47.366Z] No more pages available, moving to next code.
+[2025-06-23T09:55:47.366Z] PROGRESS: Checked 1/1582. Found: 0. Not found: 1.
+[2025-06-23T09:55:47.367Z] PROCESSING CODE: AAA
+[2025-06-23T09:55:49.929Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T09:55:55.983Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T09:55:57.109Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T09:56:03.143Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T09:56:04.242Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T09:56:10.312Z] ✅ Page 3 has data, moving to next code.
+[2025-06-23T10:01:22.734Z] PROCESSING CODE: A32
+[2025-06-23T10:01:31.522Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:01:37.564Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:01:38.763Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:01:44.825Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:01:45.720Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:01:51.770Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:01:52.564Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:01:58.604Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:01:59.432Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:02:00.446Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:02:01.468Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:02:02.492Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:02:03.517Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:02:04.541Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:02:05.561Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:02:06.578Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:02:07.599Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:02:08.611Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:02:09.629Z] No more pages available, moving to next code.
+[2025-06-23T10:02:09.630Z] PROGRESS: Checked 1/1582. Found: 0. Not found: 1.
+[2025-06-23T10:02:09.630Z] PROCESSING CODE: AAA
+[2025-06-23T10:02:12.219Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:02:18.266Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:02:19.357Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:02:25.402Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:02:26.469Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:02:32.520Z] ✅ Page 3 has data, moving to next code.
+[2025-06-23T10:02:32.536Z] ✅ Đã ghi file BCTC.xlsx cho mã AAA (sheet: Sheet1)
+[2025-06-23T10:02:32.537Z] PROGRESS: Checked 2/1582. Found: 1. Not found: 1.
+[2025-06-23T10:02:32.537Z] PROCESSING CODE: AAH
+[2025-06-23T10:02:35.467Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:02:41.500Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:02:42.526Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:02:48.571Z] ✅ Page 2 has data, moving to next code.
+[2025-06-23T10:02:48.582Z] ✅ Đã ghi file BCTC.xlsx cho mã AAH (sheet: Sheet1)
+[2025-06-23T10:02:48.584Z] PROGRESS: Checked 3/1582. Found: 2. Not found: 1.
+[2025-06-23T10:02:48.585Z] PROCESSING CODE: AAM
+[2025-06-23T10:02:51.630Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:02:57.684Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:02:58.624Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:03:04.666Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:03:05.699Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:03:11.734Z] ✅ Page 3 has data, moving to next code.
+[2025-06-23T10:03:11.749Z] ✅ Đã ghi file BCTC.xlsx cho mã AAM (sheet: Sheet1)
+[2025-06-23T10:03:11.749Z] PROGRESS: Checked 4/1582. Found: 3. Not found: 1.
+[2025-06-23T10:03:11.750Z] PROCESSING CODE: AAT
+[2025-06-23T10:03:14.734Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:03:20.767Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:03:21.665Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:03:27.697Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:03:28.622Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:03:34.664Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:03:35.616Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:03:41.649Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:03:42.408Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:03:48.448Z] ⚠️ Page 5 has no data, skipping
+[2025-06-23T10:03:49.248Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:03:55.292Z] ⚠️ Page 6 has no data, skipping
+[2025-06-23T10:03:56.034Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:04:02.100Z] ⚠️ Page 7 has no data, skipping
+[2025-06-23T10:04:02.831Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:04:03.850Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:04:04.871Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:04:05.895Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:04:06.925Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:04:07.945Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:04:08.964Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:04:09.989Z] No more pages available, moving to next code.
+[2025-06-23T10:04:09.990Z] PROGRESS: Checked 5/1582. Found: 3. Not found: 2.
+[2025-06-23T10:04:09.991Z] PROCESSING CODE: AAV
+[2025-06-23T10:04:12.568Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:04:18.615Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:04:19.573Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:04:25.628Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:04:26.626Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:04:32.669Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:04:33.770Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:04:39.818Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:04:40.920Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:04:46.980Z] ✅ Page 5 has data, moving to next code.
+[2025-06-23T10:04:46.993Z] ✅ Đã ghi file BCTC.xlsx cho mã AAV (sheet: Sheet1)
+[2025-06-23T10:04:46.993Z] PROGRESS: Checked 6/1582. Found: 4. Not found: 2.
+[2025-06-23T10:04:46.993Z] PROCESSING CODE: ABB
+[2025-06-23T10:04:49.947Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:04:55.995Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:04:56.993Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:05:03.035Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:05:04.036Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:05:10.097Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:05:11.226Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:09:28.186Z] PROCESSING CODE: A32
+[2025-06-23T10:09:36.798Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:09:56.676Z] PROCESSING CODE: AAA
+[2025-06-23T10:10:05.012Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:10:11.080Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:10:12.347Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:10:18.397Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:10:19.465Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:10:25.520Z] ✅ Page 3 has data, moving to next code.
+[2025-06-23T10:10:25.537Z] ✅ Đã ghi file BCTC.xlsx cho mã AAA (sheet: Sheet1)
+[2025-06-23T10:10:25.537Z] PROGRESS: Checked 1/9. Found: 1. Not found: 0.
+[2025-06-23T10:10:25.538Z] PROCESSING CODE: AAH
+[2025-06-23T10:10:28.580Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:10:34.628Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:10:35.669Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:10:41.713Z] ✅ Page 2 has data, moving to next code.
+[2025-06-23T10:10:41.726Z] ✅ Đã ghi file BCTC.xlsx cho mã AAH (sheet: Sheet1)
+[2025-06-23T10:10:41.726Z] PROGRESS: Checked 2/9. Found: 2. Not found: 0.
+[2025-06-23T10:10:41.727Z] PROCESSING CODE: AAM
+[2025-06-23T10:10:44.831Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:10:50.876Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:10:51.814Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:10:57.855Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:10:59.202Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:11:05.241Z] ✅ Page 3 has data, moving to next code.
+[2025-06-23T10:11:05.253Z] ✅ Đã ghi file BCTC.xlsx cho mã AAM (sheet: Sheet1)
+[2025-06-23T10:11:05.253Z] PROGRESS: Checked 3/9. Found: 3. Not found: 0.
+[2025-06-23T10:11:05.253Z] PROCESSING CODE: AAT
+[2025-06-23T10:11:08.301Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:11:14.335Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:11:15.287Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:11:21.329Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:11:22.277Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:11:28.316Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:11:29.421Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:11:35.462Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:11:36.216Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:11:42.254Z] ⚠️ Page 5 has no data, skipping
+[2025-06-23T10:11:43.301Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:11:49.392Z] ⚠️ Page 6 has no data, skipping
+[2025-06-23T10:11:50.266Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:11:56.329Z] ⚠️ Page 7 has no data, skipping
+[2025-06-23T10:11:57.050Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:11:58.072Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:11:59.096Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:12:00.114Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:12:01.131Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:12:02.150Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:12:03.178Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:12:04.201Z] No more pages available, moving to next code.
+[2025-06-23T10:12:04.202Z] PROGRESS: Checked 4/9. Found: 3. Not found: 1.
+[2025-06-23T10:12:04.204Z] PROCESSING CODE: AAV
+[2025-06-23T10:14:07.577Z] PROCESSING CODE: A32
+[2025-06-23T10:14:16.917Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:14:22.966Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:14:23.972Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:14:30.024Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:14:30.880Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:14:36.933Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:14:37.848Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:14:43.893Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:14:44.698Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:14:45.725Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:14:46.749Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:14:47.809Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:14:51.779Z] PROCESSING CODE: AAA
+[2025-06-23T10:15:01.626Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:15:07.690Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:15:09.007Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:15:15.067Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:15:16.226Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:15:22.305Z] ✅ Page 3 has data, moving to next code.
+[2025-06-23T10:15:22.322Z] ✅ Đã ghi file BCTC.xlsx cho mã AAA (sheet: Sheet1)
+[2025-06-23T10:15:22.323Z] PROGRESS: Checked 1/1581. Found: 1. Not found: 0.
+[2025-06-23T10:15:22.323Z] PROCESSING CODE: AAH
+[2025-06-23T10:15:25.840Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:15:31.875Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:15:32.859Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:15:38.928Z] ✅ Page 2 has data, moving to next code.
+[2025-06-23T10:15:38.943Z] ✅ Đã ghi file BCTC.xlsx cho mã AAH (sheet: Sheet1)
+[2025-06-23T10:15:38.944Z] PROGRESS: Checked 2/1581. Found: 2. Not found: 0.
+[2025-06-23T10:15:38.944Z] PROCESSING CODE: AAM
+[2025-06-23T10:15:42.113Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:15:48.173Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:15:49.219Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:15:55.267Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:15:56.367Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:16:02.492Z] ✅ Page 3 has data, moving to next code.
+[2025-06-23T10:16:02.512Z] ✅ Đã ghi file BCTC.xlsx cho mã AAM (sheet: Sheet1)
+[2025-06-23T10:16:02.513Z] PROGRESS: Checked 3/1581. Found: 3. Not found: 0.
+[2025-06-23T10:16:02.514Z] PROCESSING CODE: AAT
+[2025-06-23T10:16:05.595Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:16:11.650Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:16:12.637Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:16:18.691Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:16:19.917Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:16:25.944Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:16:26.703Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:16:32.748Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:16:33.523Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:16:39.568Z] ⚠️ Page 5 has no data, skipping
+[2025-06-23T10:16:40.446Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:16:46.499Z] ⚠️ Page 6 has no data, skipping
+[2025-06-23T10:16:47.206Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:16:53.267Z] ⚠️ Page 7 has no data, skipping
+[2025-06-23T10:16:54.001Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:16:55.024Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:16:56.049Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:16:57.078Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:16:58.112Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:16:59.145Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:17:00.178Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:17:01.189Z] No more pages available, moving to next code.
+[2025-06-23T10:17:01.189Z] PROGRESS: Checked 4/1581. Found: 3. Not found: 1.
+[2025-06-23T10:17:01.190Z] PROCESSING CODE: AAV
+[2025-06-23T10:17:05.347Z] PROCESSING CODE: AAA
+[2025-06-23T10:17:14.047Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:17:20.119Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:17:21.198Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:17:27.276Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:17:28.358Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:17:34.448Z] ✅ Page 3 has data, moving to next code.
+[2025-06-23T10:17:34.467Z] ✅ Đã ghi file BCTC.xlsx cho mã AAA (sheet: Sheet1)
+[2025-06-23T10:17:34.468Z] PROGRESS: Checked 1/1581. Found: 1. Not found: 0.
+[2025-06-23T10:17:34.469Z] PROCESSING CODE: AAH
+[2025-06-23T10:17:37.484Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:17:43.530Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:17:44.534Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:17:50.598Z] ✅ Page 2 has data, moving to next code.
+[2025-06-23T10:17:50.616Z] ✅ Đã ghi file BCTC.xlsx cho mã AAH (sheet: Sheet1)
+[2025-06-23T10:17:50.618Z] PROGRESS: Checked 2/1581. Found: 2. Not found: 0.
+[2025-06-23T10:17:50.619Z] PROCESSING CODE: AAM
+[2025-06-23T10:17:53.800Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:17:59.859Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:18:00.880Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:18:06.926Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:18:08.018Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:18:14.090Z] ✅ Page 3 has data, moving to next code.
+[2025-06-23T10:18:14.116Z] ✅ Đã ghi file BCTC.xlsx cho mã AAM (sheet: Sheet1)
+[2025-06-23T10:18:14.117Z] PROGRESS: Checked 3/1581. Found: 3. Not found: 0.
+[2025-06-23T10:18:14.118Z] PROCESSING CODE: AAT
+[2025-06-23T10:18:17.282Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:18:23.332Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:18:24.318Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:21:01.248Z] PROCESSING CODE: AAA
+[2025-06-23T10:21:10.463Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:21:16.528Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:21:17.670Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:21:23.720Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:21:25.620Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:21:31.701Z] ✅ Page 3 has data, moving to next code.
+[2025-06-23T10:21:31.734Z] ✅ Đã ghi file BCTC.xlsx cho mã AAA (sheet: Sheet1)
+[2025-06-23T10:21:31.734Z] PROGRESS: Checked 1/1581. Found: 1. Not found: 0.
+[2025-06-23T10:21:31.735Z] PROCESSING CODE: AAH
+[2025-06-23T10:21:34.780Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:21:40.823Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:21:41.854Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:21:47.933Z] ✅ Page 2 has data, moving to next code.
+[2025-06-23T10:21:47.954Z] ✅ Đã ghi file BCTC.xlsx cho mã AAH (sheet: Sheet1)
+[2025-06-23T10:21:47.955Z] PROGRESS: Checked 2/1581. Found: 2. Not found: 0.
+[2025-06-23T10:21:47.956Z] PROCESSING CODE: AAM
+[2025-06-23T10:21:51.433Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:21:57.475Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:21:58.543Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:22:04.585Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:22:05.711Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:22:11.783Z] ✅ Page 3 has data, moving to next code.
+[2025-06-23T10:22:11.799Z] ✅ Đã ghi file BCTC.xlsx cho mã AAM (sheet: Sheet1)
+[2025-06-23T10:22:11.800Z] PROGRESS: Checked 3/1581. Found: 3. Not found: 0.
+[2025-06-23T10:22:11.801Z] PROCESSING CODE: AAT
+[2025-06-23T10:22:14.806Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:22:20.842Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:22:21.826Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:22:27.856Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:22:28.783Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:22:34.822Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:22:35.466Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:22:41.492Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:22:42.299Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:22:48.347Z] ⚠️ Page 5 has no data, skipping
+[2025-06-23T10:22:49.250Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:22:55.293Z] ⚠️ Page 6 has no data, skipping
+[2025-06-23T10:22:56.065Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:23:02.125Z] ⚠️ Page 7 has no data, skipping
+[2025-06-23T10:23:02.859Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:23:03.876Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:23:04.899Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:23:05.920Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:23:06.936Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:23:07.950Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:23:08.975Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:23:10.007Z] No more pages available, moving to next code.
+[2025-06-23T10:23:10.007Z] PROGRESS: Checked 4/1581. Found: 3. Not found: 1.
+[2025-06-23T10:23:10.008Z] PROCESSING CODE: AAV
+[2025-06-23T10:23:12.868Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:23:18.923Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:23:19.965Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:23:26.038Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:23:27.066Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:23:33.110Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:23:34.298Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:23:40.336Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:23:41.679Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:23:47.740Z] ✅ Page 5 has data, moving to next code.
+[2025-06-23T10:23:47.754Z] ✅ Đã ghi file BCTC.xlsx cho mã AAV (sheet: Sheet1)
+[2025-06-23T10:23:47.754Z] PROGRESS: Checked 5/1581. Found: 4. Not found: 1.
+[2025-06-23T10:23:47.755Z] PROCESSING CODE: ABB
+[2025-06-23T10:23:50.744Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:23:56.789Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:23:57.898Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:24:03.955Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:24:05.139Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:24:11.202Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:24:12.473Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:24:18.541Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:24:19.828Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:24:25.886Z] ✅ Page 5 has data, moving to next code.
+[2025-06-23T10:24:25.900Z] ✅ Đã ghi file BCTC.xlsx cho mã ABB (sheet: Sheet1)
+[2025-06-23T10:24:25.901Z] PROGRESS: Checked 6/1581. Found: 5. Not found: 1.
+[2025-06-23T10:24:25.901Z] PROCESSING CODE: ABC
+[2025-06-23T10:24:28.939Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:24:34.970Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:24:35.980Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:24:42.074Z] ✅ Page 2 has data, moving to next code.
+[2025-06-23T10:24:42.089Z] ✅ Đã ghi file BCTC.xlsx cho mã ABC (sheet: Sheet1)
+[2025-06-23T10:24:42.089Z] PROGRESS: Checked 7/1581. Found: 6. Not found: 1.
+[2025-06-23T10:24:42.090Z] PROCESSING CODE: ABI
+[2025-06-23T10:24:45.089Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:24:51.123Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:24:52.275Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:24:58.318Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:24:59.372Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:25:05.422Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:25:06.440Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:25:12.486Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:25:13.196Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:25:14.207Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:25:15.247Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:25:16.274Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:25:17.295Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:25:18.311Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:25:19.331Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:25:20.347Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:25:21.374Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:25:22.395Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:25:23.406Z] No more pages available, moving to next code.
+[2025-06-23T10:25:23.406Z] PROGRESS: Checked 8/1581. Found: 6. Not found: 2.
+[2025-06-23T10:25:23.407Z] PROCESSING CODE: ABR
+[2025-06-23T10:25:26.201Z] 🚀 ~ processCompany ~ maxRecord: 17
+[2025-06-23T10:25:32.245Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:25:33.293Z] 🚀 ~ processCompany ~ maxRecord: 17
+[2025-06-23T10:25:39.334Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:25:40.479Z] 🚀 ~ processCompany ~ maxRecord: 17
+[2025-06-23T10:25:46.566Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:25:47.697Z] 🚀 ~ processCompany ~ maxRecord: 17
+[2025-06-23T10:25:53.755Z] ✅ Page 4 has data, moving to next code.
+[2025-06-23T10:25:53.771Z] ✅ Đã ghi file BCTC.xlsx cho mã ABR (sheet: Sheet1)
+[2025-06-23T10:25:53.772Z] PROGRESS: Checked 9/1581. Found: 7. Not found: 2.
+[2025-06-23T10:25:53.772Z] PROCESSING CODE: ABS
+[2025-06-23T10:25:56.916Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:26:02.960Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:26:03.926Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:26:09.996Z] ✅ Page 2 has data, moving to next code.
+[2025-06-23T10:26:10.020Z] ✅ Đã ghi file BCTC.xlsx cho mã ABS (sheet: Sheet1)
+[2025-06-23T10:26:10.020Z] PROGRESS: Checked 10/1581. Found: 8. Not found: 2.
+[2025-06-23T10:26:10.021Z] PROCESSING CODE: ABT
+[2025-06-23T10:26:13.289Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:26:19.333Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:26:20.405Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:26:26.461Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:26:27.575Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:26:33.637Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:26:34.803Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:26:40.864Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:26:41.943Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:26:48.018Z] ✅ Page 5 has data, moving to next code.
+[2025-06-23T10:26:48.040Z] ✅ Đã ghi file BCTC.xlsx cho mã ABT (sheet: Sheet1)
+[2025-06-23T10:26:48.041Z] PROGRESS: Checked 11/1581. Found: 9. Not found: 2.
+[2025-06-23T10:26:48.041Z] PROCESSING CODE: ACB
+[2025-06-23T10:26:51.155Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:26:57.186Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:26:58.266Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:27:04.316Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:27:05.387Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:27:11.447Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:27:12.575Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:27:18.718Z] ✅ Page 4 has data, moving to next code.
+[2025-06-23T10:27:18.759Z] ✅ Đã ghi file BCTC.xlsx cho mã ACB (sheet: Sheet1)
+[2025-06-23T10:27:18.760Z] PROGRESS: Checked 12/1581. Found: 10. Not found: 2.
+[2025-06-23T10:27:18.761Z] PROCESSING CODE: ACC
+[2025-06-23T10:27:21.852Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:27:27.898Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:27:29.024Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:27:35.071Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:27:36.189Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:27:42.258Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:27:43.417Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:27:49.461Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:27:50.640Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:27:56.756Z] ✅ Page 5 has data, moving to next code.
+[2025-06-23T10:27:56.775Z] ✅ Đã ghi file BCTC.xlsx cho mã ACC (sheet: Sheet1)
+[2025-06-23T10:27:56.775Z] PROGRESS: Checked 13/1581. Found: 11. Not found: 2.
+[2025-06-23T10:27:56.775Z] PROCESSING CODE: ACE
+[2025-06-23T10:27:59.869Z] 🚀 ~ processCompany ~ maxRecord: 1
+[2025-06-23T10:28:05.913Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:28:06.823Z] 🚀 ~ processCompany ~ maxRecord: 1
+[2025-06-23T10:28:07.841Z] 🚀 ~ processCompany ~ maxRecord: 1
+[2025-06-23T10:28:08.859Z] 🚀 ~ processCompany ~ maxRecord: 1
+[2025-06-23T10:28:09.876Z] 🚀 ~ processCompany ~ maxRecord: 1
+[2025-06-23T10:28:10.900Z] 🚀 ~ processCompany ~ maxRecord: 1
+[2025-06-23T10:28:11.918Z] 🚀 ~ processCompany ~ maxRecord: 1
+[2025-06-23T10:28:12.933Z] 🚀 ~ processCompany ~ maxRecord: 1
+[2025-06-23T10:28:13.948Z] 🚀 ~ processCompany ~ maxRecord: 1
+[2025-06-23T10:28:14.969Z] 🚀 ~ processCompany ~ maxRecord: 1
+[2025-06-23T10:28:15.985Z] 🚀 ~ processCompany ~ maxRecord: 1
+[2025-06-23T10:28:17.004Z] 🚀 ~ processCompany ~ maxRecord: 1
+[2025-06-23T10:28:18.022Z] 🚀 ~ processCompany ~ maxRecord: 1
+[2025-06-23T10:28:19.044Z] 🚀 ~ processCompany ~ maxRecord: 1
+[2025-06-23T10:28:20.056Z] No more pages available, moving to next code.
+[2025-06-23T10:28:20.056Z] PROGRESS: Checked 14/1581. Found: 11. Not found: 3.
+[2025-06-23T10:28:20.057Z] PROCESSING CODE: ACG
+[2025-06-23T10:28:22.596Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:28:28.645Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:28:29.749Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:28:35.781Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:28:37.204Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:28:43.231Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:28:44.452Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:28:50.554Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:28:51.707Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:28:57.759Z] ✅ Page 5 has data, moving to next code.
+[2025-06-23T10:28:57.777Z] ✅ Đã ghi file BCTC.xlsx cho mã ACG (sheet: Sheet1)
+[2025-06-23T10:28:57.778Z] PROGRESS: Checked 15/1581. Found: 12. Not found: 3.
+[2025-06-23T10:28:57.778Z] PROCESSING CODE: ACL
+[2025-06-23T10:29:00.861Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:29:06.895Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:29:07.935Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:29:13.977Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:29:15.017Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:29:21.066Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:29:22.203Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:29:28.241Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:29:29.349Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:29:35.437Z] ✅ Page 5 has data, moving to next code.
+[2025-06-23T10:29:35.471Z] ✅ Đã ghi file BCTC.xlsx cho mã ACL (sheet: Sheet1)
+[2025-06-23T10:29:35.471Z] PROGRESS: Checked 16/1581. Found: 13. Not found: 3.
+[2025-06-23T10:29:35.472Z] PROCESSING CODE: ACM
+[2025-06-23T10:29:38.427Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:29:44.475Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:29:45.457Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:29:51.493Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:29:52.370Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:29:58.409Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:29:59.441Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:30:05.495Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:30:06.399Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:30:31.688Z] PROCESSING CODE: AAA
+[2025-06-23T10:30:39.728Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:30:45.796Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:30:46.862Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:30:52.927Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:30:54.012Z] 🚀 ~ processCompany ~ maxRecord: 16
+[2025-06-23T10:31:00.094Z] ✅ Page 3 has data, moving to next code.
+[2025-06-23T10:31:00.113Z] ✅ Đã ghi file BCTC.xlsx cho mã AAA (sheet: Sheet1)
+[2025-06-23T10:31:00.113Z] PROGRESS: Checked 1/1581. Found: 1. Not found: 0.
+[2025-06-23T10:31:00.114Z] PROCESSING CODE: AAH
+[2025-06-23T10:31:03.070Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:31:09.121Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:31:10.079Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:31:16.151Z] ✅ Page 2 has data, moving to next code.
+[2025-06-23T10:31:16.162Z] ✅ Đã ghi file BCTC.xlsx cho mã AAH (sheet: Sheet1)
+[2025-06-23T10:31:16.163Z] PROGRESS: Checked 2/1581. Found: 2. Not found: 0.
+[2025-06-23T10:31:16.163Z] PROCESSING CODE: AAM
+[2025-06-23T10:31:19.269Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:31:25.316Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:31:26.261Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:31:32.312Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:31:33.331Z] 🚀 ~ processCompany ~ maxRecord: 9
+[2025-06-23T10:31:39.421Z] ✅ Page 3 has data, moving to next code.
+[2025-06-23T10:31:39.431Z] ✅ Đã ghi file BCTC.xlsx cho mã AAM (sheet: Sheet1)
+[2025-06-23T10:31:39.432Z] PROGRESS: Checked 3/1581. Found: 3. Not found: 0.
+[2025-06-23T10:31:39.432Z] PROCESSING CODE: AAT
+[2025-06-23T10:31:42.324Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:31:48.361Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:31:49.254Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:31:55.301Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:31:56.194Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:32:02.222Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:32:02.950Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:32:08.995Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:32:09.781Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:32:15.832Z] ⚠️ Page 5 has no data, skipping
+[2025-06-23T10:32:16.626Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:32:22.673Z] ⚠️ Page 6 has no data, skipping
+[2025-06-23T10:32:24.097Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:32:30.144Z] ⚠️ Page 7 has no data, skipping
+[2025-06-23T10:32:30.907Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:32:31.930Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:32:32.956Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:32:33.979Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:32:35.002Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:32:36.027Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:32:37.051Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:32:38.076Z] No more pages available, moving to next code.
+[2025-06-23T10:32:38.077Z] PROGRESS: Checked 4/1581. Found: 3. Not found: 1.
+[2025-06-23T10:32:38.077Z] PROCESSING CODE: AAV
+[2025-06-23T10:32:40.686Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:32:46.740Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:32:47.706Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:32:53.752Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:32:54.861Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:33:00.911Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:33:02.015Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:33:08.072Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:33:09.179Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:33:15.279Z] ✅ Page 5 has data, moving to next code.
+[2025-06-23T10:33:15.291Z] ✅ Đã ghi file BCTC.xlsx cho mã AAV (sheet: Sheet1)
+[2025-06-23T10:33:15.292Z] PROGRESS: Checked 5/1581. Found: 4. Not found: 1.
+[2025-06-23T10:33:15.292Z] PROCESSING CODE: ABB
+[2025-06-23T10:33:18.424Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:33:24.472Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:33:25.578Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:33:31.634Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:33:32.710Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:33:38.755Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:33:39.893Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:33:45.945Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:33:47.051Z] 🚀 ~ processCompany ~ maxRecord: 18
+[2025-06-23T10:33:53.118Z] ✅ Page 5 has data, moving to next code.
+[2025-06-23T10:33:53.132Z] ✅ Đã ghi file BCTC.xlsx cho mã ABB (sheet: Sheet1)
+[2025-06-23T10:33:53.133Z] PROGRESS: Checked 6/1581. Found: 5. Not found: 1.
+[2025-06-23T10:33:53.133Z] PROCESSING CODE: ABC
+[2025-06-23T10:33:56.155Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:34:02.195Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:34:03.179Z] 🚀 ~ processCompany ~ maxRecord: 7
+[2025-06-23T10:34:09.247Z] ✅ Page 2 has data, moving to next code.
+[2025-06-23T10:34:09.266Z] ✅ Đã ghi file BCTC.xlsx cho mã ABC (sheet: Sheet1)
+[2025-06-23T10:34:09.267Z] PROGRESS: Checked 7/1581. Found: 6. Not found: 1.
+[2025-06-23T10:34:09.268Z] PROCESSING CODE: ABI
+[2025-06-23T10:34:12.258Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:34:18.309Z] ⚠️ Page 1 has no data, skipping
+[2025-06-23T10:34:19.490Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:34:25.537Z] ⚠️ Page 2 has no data, skipping
+[2025-06-23T10:34:26.522Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:34:32.565Z] ⚠️ Page 3 has no data, skipping
+[2025-06-23T10:34:33.557Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:34:39.602Z] ⚠️ Page 4 has no data, skipping
+[2025-06-23T10:34:40.295Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:34:41.312Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:34:42.329Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:34:43.345Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:34:44.367Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:34:45.381Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:34:46.407Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:34:47.414Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:34:48.428Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:34:49.454Z] 🚀 ~ processCompany ~ maxRecord: 4
+[2025-06-23T10:34:50.479Z] No more pages available, moving to next code.
+[2025-06-23T10:34:50.480Z] PROGRESS: Checked 8/1581. Found: 6. Not found: 2.
+[2025-06-23T10:34:50.480Z] PROCESSING CODE: ABR
+[2025-06-23T10:34:53.210Z] 🚀 ~ processCompany ~ maxRecord: 17

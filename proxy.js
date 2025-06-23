@@ -120,19 +120,22 @@ async function extractData(page, year, quarter) {
 
       if (yearQueried === String(year) && quarterQueried === String(quarter)) {
         const tableDiv = document.querySelector('div[id="pt2:t2::db"]');
-        if (!tableDiv) return [];
-
+        if (!tableDiv) {
+          return [];
+        }
         const tbody = tableDiv.querySelector("tbody");
-        if (!tbody) return [];
-
+        if (!tbody) {
+          return [];
+        }
         const rows = Array.from(tbody.querySelectorAll("tr")).slice(1);
-
+        if (rows.length === 0) {
+        }
         return rows.map((row) => {
           const cells = row.querySelectorAll("td");
           const td5Span =
-            cells[4]?.querySelector("span")?.textContent?.trim() || "-";
+            cells[3]?.querySelector("span")?.textContent?.trim() || "-";
           const td6Span =
-            cells[5]?.querySelector("span")?.textContent?.trim() || "-";
+            cells[4]?.querySelector("span")?.textContent?.trim() || "-";
           return {
             start: td5Span === "0" ? "-" : td5Span,
             end: td6Span === "0" ? "-" : td6Span,
@@ -166,13 +169,11 @@ async function processCompany(page, code, year, quarter) {
   let currentPage = 1;
 
   await page.waitForSelector("a.xgl", { timeout: 10000 });
-  const pageData = [];
   let foundData = false;
+  let extractedValues = [];
   for (let i = 0; i < maxRecord || currentPage <= 4; i++) {
     if (i === 0 || (i + 1) % 15 === 0) {
-      // If not the first page, check if next page is available
       if (i !== 0) {
-        // Check if a next page exists
         const hasNextPage = await page.evaluate((pageNumber) => {
           const anchors = Array.from(document.querySelectorAll("a.x14f"));
           return anchors.some(
@@ -185,7 +186,6 @@ async function processCompany(page, code, year, quarter) {
         }
       }
       i / 15 >= 1 && (await navigateToPage(page, i / 15 + 1));
-      // Re-perform the search after navigating
       await typeAndSearch(page, 'input[id$="pt9:it8112::content"]', code);
       await new Promise((resolve) => setTimeout(resolve, 1000));
       await clickSearchButton(page);
@@ -209,10 +209,13 @@ async function processCompany(page, code, year, quarter) {
     const extractedData = await extractData(page, year, quarter);
 
     if (extractedData?.length > 0) {
-      pageData.push(extractedData);
+      extractedValues = extractedData.map((item) => [
+        item.start ?? "",
+        item.end ?? "",
+      ]);
       foundData = true;
       logMessage(`✅ Page ${i + 1} has data, moving to next code.`);
-      break; // Stop searching further pages for this code
+      break;
     } else {
       logMessage(`⚠️ Page ${i + 1} has no data, skipping`);
     }
@@ -223,37 +226,45 @@ async function processCompany(page, code, year, quarter) {
     await page.waitForSelector("a.xgl");
   }
 
-  // ✅ Xử lý và ghi dữ liệu: ghép các cột theo từng trang, bỏ qua dòng trống
-  const header = [];
-  const sheetRows = [];
-
-  pageData.forEach((_, pageIndex) => {
-    header.push(`${code} (2024 - page ${pageIndex + 1})`);
-    header.push(`${code} (2023 - page ${pageIndex + 1})`);
-  });
-
-  sheetRows.push(header);
-
-  const maxRowCount = Math.max(...pageData.map((d) => d.length), 0);
-
-  for (let i = 0; i < maxRowCount; i++) {
-    const row = [];
-
-    pageData.forEach((data) => {
-      const item = data[i];
-      row.push(item?.end ?? "");
-      row.push(item?.start ?? "");
-    });
-
-    const isEmpty = row.every((cell) => !cell || cell === "-" || cell === "");
-    if (!isEmpty) {
-      sheetRows.push(row);
+  // Write to file immediately if foundData
+  if (foundData) {
+    const filename = "BCTC.xlsx";
+    const workbookFile = xlsx.readFile(filename);
+    const sheetName = workbookFile.SheetNames[0];
+    const sheet = workbookFile.Sheets[sheetName];
+    if (!sheet) {
+      logMessage(`❌ Sheet '${sheetName}' not found in ${filename}`);
+      return { foundData, extractedValues };
     }
+    const range = xlsx.utils.decode_range(sheet["!ref"]);
+    // Find next available column
+    let col = 3;
+    while (true) {
+      const cellRef = xlsx.utils.encode_cell({ c: col, r: 1 }); // check header row
+      if (!sheet[cellRef]) break;
+      col++;
+    }
+    // Write header
+    const headerCellStart = xlsx.utils.encode_cell({ c: col, r: 1 });
+    const headerCellEnd = xlsx.utils.encode_cell({ c: col + 1, r: 1 });
+    sheet[headerCellStart] = { t: "s", v: code + " cuoi ky" };
+    sheet[headerCellEnd] = { t: "s", v: code + " dau ky" };
+    for (let i = 0; i < extractedValues.length; i++) {
+      for (let j = 0; j < extractedValues[i].length; j++) {
+        const cellRef = xlsx.utils.encode_cell({ c: col + j, r: i + 3 });
+        sheet[cellRef] = { t: "s", v: extractedValues[i][j] };
+      }
+    }
+    if (col + extractedValues[0].length - 1 > range.e.c) {
+      range.e.c = col + extractedValues[0].length - 1;
+      sheet["!ref"] = xlsx.utils.encode_range(range);
+    }
+    xlsx.writeFile(workbookFile, filename);
+    logMessage(
+      `✅ Đã ghi file ${filename} cho mã ${code} (sheet: ${sheetName})`
+    );
   }
-
-  const worksheet = xlsx.utils.aoa_to_sheet(sheetRows);
-  xlsx.utils.book_append_sheet(workbook, worksheet, code);
-  return foundData;
+  return { foundData, extractedValues };
 }
 
 // Main orchestrator
@@ -265,7 +276,6 @@ async function main(inputList, year, quarter) {
     defaultViewport: null,
   });
 
-  //wait for chrome launch instant
   const page = await browser.newPage();
 
   let checked = 0;
@@ -275,28 +285,19 @@ async function main(inputList, year, quarter) {
   for (const inputItem of inputList) {
     const code = inputItem;
     checked++;
-    const hasData = await processCompany(page, code, year, quarter);
-    if (hasData) {
-      found++;
-    } else {
-      notFound++;
-    }
-    // Log progress after each code
-    logMessage(`PROGRESS: Checked ${checked}/${inputList.length}. Found: ${found}. Not found: ${notFound}.`);
+    const { foundData } = await processCompany(page, code, year, quarter);
+    if (foundData) found++;
+    else notFound++;
+    logMessage(
+      `PROGRESS: Checked ${checked}/${inputList.length}. Found: ${found}. Not found: ${notFound}.`
+    );
   }
 
-  const now = new Date();
-  const timestamp = now.toISOString().replace(/[:.]/g, "-");
-  const timeStr = now.toTimeString().split(" ")[0].replace(/:/g, "-");
-  const fileName = `ssc_result_${timestamp}_${timeStr}.xlsx`;
-  xlsx.writeFile(workbook, fileName);
-  logMessage(`✅ Đã ghi file ${fileName}`);
-
-  // Add summary log
-  logMessage(`SUMMARY: Checked ${checked} codes. Found data: ${found}. Not found: ${notFound}. Total: ${inputList.length}`);
-
+  logMessage(
+    `SUMMARY: Checked ${checked} codes. Found data: ${found}. Not found: ${notFound}. Total: ${inputList.length}`
+  );
   await browser.close();
 }
 
-main(input, 2024, 4);
-
+main(input.slice(1), 2024, 4);
+// main(input.slice(0, 10), 2024, 4);
