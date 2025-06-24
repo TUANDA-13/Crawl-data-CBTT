@@ -90,7 +90,10 @@ async function extractData(page, year, quarter) {
         const quarterQueried = document
           .querySelector('span[id="pt2:tt1:3:lookupValueId::content"]')
           ?.textContent?.trim();
-        if (yearQueried === String(year) && quarterQueried === String(quarter)) {
+        if (
+          yearQueried === String(year) &&
+          quarterQueried === String(quarter)
+        ) {
           const tableDiv = document.querySelector('div[id="pt2:t2::db"]');
           if (!tableDiv) {
             return [];
@@ -125,22 +128,104 @@ async function extractData(page, year, quarter) {
 
 async function extractTabData(page, tabId) {
   try {
-    const safeSelector = `#${tabId.replace(/:/g, '\\:')}`;
-    await page.click(safeSelector);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    return await page.evaluate(() => {
-      const tableDiv = document.querySelector('div[id="pt2:t2::db"]');
+    // Use a different approach to click the tab - find by text content instead of ID
+    await page.evaluate((tabId) => {
+      let tabElement;
+      if (tabId === "pt2:KQKD::disAcr") {
+        // Find KQKD tab by looking for elements with "KQKD" text
+        const allElements = document.querySelectorAll("*");
+        for (const element of allElements) {
+          if (
+            element.textContent &&
+            element.textContent.includes("KQKD") &&
+            element.tagName === "A" &&
+            element.getAttribute("role") === "tab"
+          ) {
+            tabElement = element;
+            break;
+          }
+        }
+      } else if (tabId === "pt2:LCTT-GT::disAcr") {
+        // Find LCTT-GT tab by looking for elements with "LCTT" text
+        tabElement = document.querySelector(`a[id="${tabId}"]`);
+      }
+
+      if (tabElement) {
+        tabElement.click();
+      }
+    }, tabId);
+
+    await new Promise((resolve) => setTimeout(resolve, 2000)); // Increased wait time
+
+    // Wait for tab content to be visible
+    if (tabId === "pt2:LCTT-GT::disAcr") {
+      await page.waitForSelector('div[id="pt2:LCTT-GT::body"]', {
+        timeout: 5000,
+      });
+    } else if (tabId === "pt2:KQKD::disAcr") {
+      await page.waitForSelector('div[id="pt2:KQKD"]', { timeout: 5000 });
+    }
+
+    return await page.evaluate((tabId) => {
+      // For KQKD tab, look for table inside the KQKD div
+      let tableDiv;
+      if (tabId === "pt2:KQKD::disAcr") {
+        const kqkdDiv = document.querySelector('div[id="pt2:KQKD"]');
+        console.log("KQKD div found:", !!kqkdDiv);
+        tableDiv = kqkdDiv?.querySelector('div[id="pt2:t3::db"]');
+        console.log("KQKD table div found:", !!tableDiv);
+      } else if (tabId === "pt2:LCTT-GT::disAcr") {
+        // For LCTT-GT tab, look for table inside the LCTT-GT div
+        const lcttBodyDiv = document.querySelector(
+          'div[id="pt2:LCTT-GT::body"]'
+        );
+        console.log("LCTT body div found:", !!lcttBodyDiv);
+        const lcttDiv = lcttBodyDiv?.querySelector('div[id="pt2:LCTT-GT"]');
+        console.log("LCTT div found:", !!lcttDiv);
+        tableDiv = lcttDiv?.querySelector('div[id="pt2:t6"]');
+        console.log("LCTT table div found:", !!tableDiv);
+        
+        // For LCTT-GT, the table structure is different - data is directly in tbody
+        if (tableDiv) {
+          const tbody = tableDiv.querySelector("tbody");
+          if (tbody) {
+            const rows = Array.from(tbody.querySelectorAll("tr"));
+            console.log("LCTT rows found:", rows.length);
+            return rows.map((row) => {
+              const cells = row.querySelectorAll("td");
+              // For LCTT-GT, we need columns 3 and 4 (index 3 and 4)
+              const col3 = cells[3]?.querySelector("span")?.textContent?.trim() || "-";
+              const col4 = cells[4]?.querySelector("span")?.textContent?.trim() || "-";
+              return [col3 === "0" ? "-" : col3, col4 === "0" ? "-" : col4];
+            });
+          }
+        }
+        return [];
+      } else {
+        // For other tabs, use the original selector
+        tableDiv = document.querySelector('div[id="pt2:t2::db"]');
+      }
       if (!tableDiv) return [];
       const tbody = tableDiv.querySelector("tbody");
       if (!tbody) return [];
-      const rows = Array.from(tbody.querySelectorAll("tr")).slice(1);
+      let rows;
+      if (tabId === "pt2:KQKD::disAcr") {
+        // For KQKD tab, include all rows (don't skip first row)
+        rows = Array.from(tbody.querySelectorAll("tr"));
+      } else {
+        // For other tabs, skip the first row (header)
+        rows = Array.from(tbody.querySelectorAll("tr")).slice(1);
+      }
+      logMessage(`🚀 ~ returnawaitpage.evaluate ~ rows: ${JSON.stringify(rows)}`);
       return rows.map((row) => {
         const cells = row.querySelectorAll("td");
-        const col3 = cells[3]?.querySelector("span")?.textContent?.trim() || "-";
-        const col4 = cells[4]?.querySelector("span")?.textContent?.trim() || "-";
+        const col3 =
+          cells[3]?.querySelector("span")?.textContent?.trim() || "-";
+        const col4 =
+          cells[4]?.querySelector("span")?.textContent?.trim() || "-";
         return [col3 === "0" ? "-" : col3, col4 === "0" ? "-" : col4];
       });
-    });
+    }, tabId);
   } catch (err) {
     logMessage(`❌ Error in extractTabData for tab ${tabId}: ${err.message}`);
     return [];
@@ -169,12 +254,14 @@ async function processCompany(page, code, year, quarter) {
   try {
     await page.waitForSelector("a.xgl", { timeout: 10000 });
   } catch (err) {
-    logMessage(`❌ Error waiting for selector a.xgl for code ${code}: ${err.message}`);
+    logMessage(
+      `❌ Error waiting for selector a.xgl for code ${code}: ${err.message}`
+    );
     return { foundData: false, extractedValues: [] };
   }
   let foundData = false;
   let extractedValues = [];
-  for (let i = 0; i < maxRecord || currentPage <= 4; i++) {
+  for (let i = 2; i < maxRecord || currentPage <= 4; i++) {
     try {
       if (i === 0 || (i + 1) % 15 === 0) {
         if (i !== 0) {
@@ -221,7 +308,9 @@ async function processCompany(page, code, year, quarter) {
       await clickSearchButton(page);
       await page.waitForSelector("a.xgl");
     } catch (err) {
-      logMessage(`❌ Error in processCompany loop for code ${code}: ${err.message}`);
+      logMessage(
+        `❌ Error in processCompany loop for code ${code}: ${err.message}`
+      );
       continue;
     }
   }
@@ -317,7 +406,9 @@ async function processCompany(page, code, year, quarter) {
         `✅ Đã ghi file ${filename} cho mã ${code} (sheet: ${workbookFile.SheetNames[0]}, ${workbookFile.SheetNames[1]}, ${workbookFile.SheetNames[2]})`
       );
     } catch (err) {
-      logMessage(`❌ Error writing file ${filename} for code ${code}: ${err.message}`);
+      logMessage(
+        `❌ Error writing file ${filename} for code ${code}: ${err.message}`
+      );
     }
   }
   return { foundData, extractedValues };
