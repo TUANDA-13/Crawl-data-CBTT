@@ -50,6 +50,12 @@ The script will:
   - **LCTT-GT** (Lưu chuyển tiền tệ): Cash flow data
 - Log all progress and errors to `log.txt`
 
+### Important Note: Clear Data Before Each Run
+**After each run, please clear all data in the BCTC.xlsx file to ensure you get the newest data.** The script appends data to existing sheets, so clearing the data before each run prevents duplicate or outdated information from being included in your results.
+
+### Important Note: Do Not Open Excel Files While Running
+**Do not open BCTC.xlsx or codes.xlsx files while the script is running.** If these files are open in Excel, the script will not be able to write data to them and may cause errors. Close all Excel files before starting the script.
+
 ### Customizing the Range, Year, and Quarter
 
 To scrape data for a specific range of codes or change the year and quarter, edit the last line in `proxy.js`:
