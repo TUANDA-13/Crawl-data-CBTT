@@ -1,40 +1,7 @@
 import puppeteer from "puppeteer-core";
 import xlsx from "xlsx";
 import fs from "fs";
-// import axios from "axios";
-// import fs from "fs";
 
-const part = 1;
-
-// const getCompanyCodesFromDrive = async (fileId ="1w_9FFeca7bWuuZbXAGSttshK11FU2zBp") => {
-// const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
-//   try {
-//     const response = await axios.get(downloadUrl, {
-//       responseType: "arraybuffer",
-//     });
-
-//     // Ghi tạm file ra để đọc (hoặc đọc từ buffer)
-//     fs.writeFileSync("temp.xlsx", response.data);
-
-//     const workbook = xlsx.read(response.data, { type: "buffer" });
-//     const sheetName = workbook.SheetNames[0];
-//     const sheet = workbook.Sheets[sheetName];
-
-//     const rows = xlsx.utils.sheet_to_json(sheet);
-
-//     // Giả sử cột có tên là "Mã"
-//     const codes = rows.map((row) => row["Mã chứng khoán"]).filter(Boolean);
-
-//     console.log("✅ Mã công ty:", codes);
-//     return codes;
-//   } catch (error) {
-//     console.error("❌ Lỗi khi tải file từ Google Drive:", error.message);
-//   }
-// };
-
-// await getCompanyCodesFromDrive();
-
-// Read temp.xlsx and get column E values
 function getColumnEValues(filename) {
   const workbook = xlsx.readFile(filename);
   const sheetName = workbook.SheetNames[0];
@@ -53,105 +20,133 @@ function getColumnEValues(filename) {
   return values;
 }
 
-const input = getColumnEValues("temp.xlsx");
+const input = getColumnEValues("codes.xlsx");
 
-const workbook = xlsx.utils.book_new();
-
-// Helper: Wait for selector and type value
 async function typeAndSearch(page, selector, value) {
-  await page.waitForSelector(selector);
-  await page.type(selector, value);
+  try {
+    await page.waitForSelector(selector);
+    await page.type(selector, value);
+  } catch (err) {
+    logMessage(`❌ Error in typeAndSearch: ${err.message}`);
+  }
 }
 
-// Helper: Click search button
 async function clickSearchButton(page) {
-  await page.evaluate(() => {
-    const searchDiv = document.querySelector('div[id="pt9:b1"]');
-    const searchLink = searchDiv?.querySelector("a");
-    if (searchLink) {
-      searchLink.click();
-    }
-  });
-}
-
-// Helper: Get max record count
-async function getMaxRecord(page) {
-  const totalCount = await page.evaluate(() => {
-    const span = document.querySelector('span[id$="pt9:it4"]');
-    if (!span) return 0;
-
-    const text = span.textContent || "";
-    const match = text.match(/\d+/); // tìm số đầu tiên trong chuỗi
-
-    return match ? parseInt(match[0], 10) : 0;
-  });
-
-  return totalCount;
-}
-
-// Helper: Navigate to a specific page
-async function navigateToPage(page, pageNumber) {
-  await page.waitForSelector("a.x14f"); // đảm bảo các thẻ a đã xuất hiện
-
-  await page.evaluate((pageNumber) => {
-    const anchors = Array.from(document.querySelectorAll("a.x14f"));
-    const target = anchors.find(
-      (a) => a.textContent.trim() === String(pageNumber)
-    );
-    if (target) {
-      target.click();
-      return true;
-    }
-    return false;
-  }, pageNumber);
-}
-
-// Helper: Extract data from detail page
-async function extractData(page, year, quarter) {
-  const extractedData = await page.evaluate(
-    ({ year, quarter }) => {
-      const yearQueried = document
-        .querySelector('span[id="pt2:tt1:2:lookupValueId::content"]')
-        ?.textContent?.trim();
-
-      const quarterQueried = document
-        .querySelector('span[id="pt2:tt1:3:lookupValueId::content"]')
-        ?.textContent?.trim();
-
-      if (yearQueried === String(year) && quarterQueried === String(quarter)) {
-        const tableDiv = document.querySelector('div[id="pt2:t2::db"]');
-        if (!tableDiv) {
-          return [];
-        }
-        const tbody = tableDiv.querySelector("tbody");
-        if (!tbody) {
-          return [];
-        }
-        const rows = Array.from(tbody.querySelectorAll("tr")).slice(1);
-        if (rows.length === 0) {
-        }
-        return rows.map((row) => {
-          const cells = row.querySelectorAll("td");
-          const td5Span =
-            cells[3]?.querySelector("span")?.textContent?.trim() || "-";
-          const td6Span =
-            cells[4]?.querySelector("span")?.textContent?.trim() || "-";
-          return {
-            start: td5Span === "0" ? "-" : td5Span,
-            end: td6Span === "0" ? "-" : td6Span,
-          };
-        });
+  try {
+    await page.evaluate(() => {
+      const searchDiv = document.querySelector('div[id="pt9:b1"]');
+      const searchLink = searchDiv?.querySelector("a");
+      if (searchLink) {
+        searchLink.click();
       }
-
-      return [];
-    },
-    { year, quarter }
-  );
-
-  return extractedData;
+    });
+  } catch (err) {
+    logMessage(`❌ Error in clickSearchButton: ${err.message}`);
+  }
 }
 
-// Logging system: write log to file and console
+async function getMaxRecord(page) {
+  try {
+    const totalCount = await page.evaluate(() => {
+      const span = document.querySelector('span[id$="pt9:it4"]');
+      if (!span) return 0;
+      const text = span.textContent || "";
+      const match = text.match(/\d+/);
+      return match ? parseInt(match[0], 10) : 0;
+    });
+    return totalCount;
+  } catch (err) {
+    logMessage(`❌ Error in getMaxRecord: ${err.message}`);
+    return 0;
+  }
+}
+
+async function navigateToPage(page, pageNumber) {
+  try {
+    await page.waitForSelector("a.x14f");
+    await page.evaluate((pageNumber) => {
+      const anchors = Array.from(document.querySelectorAll("a.x14f"));
+      const target = anchors.find(
+        (a) => a.textContent.trim() === String(pageNumber)
+      );
+      if (target) {
+        target.click();
+        return true;
+      }
+      return false;
+    }, pageNumber);
+  } catch (err) {
+    logMessage(`❌ Error in navigateToPage: ${err.message}`);
+  }
+}
+
+async function extractData(page, year, quarter) {
+  try {
+    const extractedData = await page.evaluate(
+      ({ year, quarter }) => {
+        const yearQueried = document
+          .querySelector('span[id="pt2:tt1:2:lookupValueId::content"]')
+          ?.textContent?.trim();
+        const quarterQueried = document
+          .querySelector('span[id="pt2:tt1:3:lookupValueId::content"]')
+          ?.textContent?.trim();
+        if (yearQueried === String(year) && quarterQueried === String(quarter)) {
+          const tableDiv = document.querySelector('div[id="pt2:t2::db"]');
+          if (!tableDiv) {
+            return [];
+          }
+          const tbody = tableDiv.querySelector("tbody");
+          if (!tbody) {
+            return [];
+          }
+          const rows = Array.from(tbody.querySelectorAll("tr")).slice(1);
+          return rows.map((row) => {
+            const cells = row.querySelectorAll("td");
+            const td5Span =
+              cells[3]?.querySelector("span")?.textContent?.trim() || "-";
+            const td6Span =
+              cells[4]?.querySelector("span")?.textContent?.trim() || "-";
+            return {
+              start: td5Span === "0" ? "-" : td5Span,
+              end: td6Span === "0" ? "-" : td6Span,
+            };
+          });
+        }
+        return [];
+      },
+      { year, quarter }
+    );
+    return extractedData;
+  } catch (err) {
+    logMessage(`❌ Error in extractData: ${err.message}`);
+    return [];
+  }
+}
+
+async function extractTabData(page, tabId) {
+  try {
+    const safeSelector = `#${tabId.replace(/:/g, '\\:')}`;
+    await page.click(safeSelector);
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    return await page.evaluate(() => {
+      const tableDiv = document.querySelector('div[id="pt2:t2::db"]');
+      if (!tableDiv) return [];
+      const tbody = tableDiv.querySelector("tbody");
+      if (!tbody) return [];
+      const rows = Array.from(tbody.querySelectorAll("tr")).slice(1);
+      return rows.map((row) => {
+        const cells = row.querySelectorAll("td");
+        const col3 = cells[3]?.querySelector("span")?.textContent?.trim() || "-";
+        const col4 = cells[4]?.querySelector("span")?.textContent?.trim() || "-";
+        return [col3 === "0" ? "-" : col3, col4 === "0" ? "-" : col4];
+      });
+    });
+  } catch (err) {
+    logMessage(`❌ Error in extractTabData for tab ${tabId}: ${err.message}`);
+    return [];
+  }
+}
+
 function logMessage(message) {
   const timestamp = new Date().toISOString();
   const logLine = `[${timestamp}] ${message}\n`;
@@ -159,110 +154,171 @@ function logMessage(message) {
   console.log(message);
 }
 
-// Main logic for one company
 async function processCompany(page, code, year, quarter) {
   logMessage(`PROCESSING CODE: ${code}`);
-  await page.goto("https://congbothongtin.ssc.gov.vn/faces/NewsSearch", {
-    waitUntil: "domcontentloaded",
-  });
+  try {
+    await page.goto("https://congbothongtin.ssc.gov.vn/faces/NewsSearch", {
+      waitUntil: "domcontentloaded",
+    });
+  } catch (err) {
+    logMessage(`❌ Error in page.goto for code ${code}: ${err.message}`);
+    return { foundData: false, extractedValues: [] };
+  }
   let maxRecord = 10;
   let currentPage = 1;
-
-  await page.waitForSelector("a.xgl", { timeout: 10000 });
+  try {
+    await page.waitForSelector("a.xgl", { timeout: 10000 });
+  } catch (err) {
+    logMessage(`❌ Error waiting for selector a.xgl for code ${code}: ${err.message}`);
+    return { foundData: false, extractedValues: [] };
+  }
   let foundData = false;
   let extractedValues = [];
   for (let i = 0; i < maxRecord || currentPage <= 4; i++) {
-    if (i === 0 || (i + 1) % 15 === 0) {
-      if (i !== 0) {
-        const hasNextPage = await page.evaluate((pageNumber) => {
-          const anchors = Array.from(document.querySelectorAll("a.x14f"));
-          return anchors.some(
-            (a) => a.textContent.trim() === String(pageNumber)
-          );
-        }, i / 15 + 1);
-        if (!hasNextPage) {
-          logMessage("No more pages available, moving to next code.");
-          break;
+    try {
+      if (i === 0 || (i + 1) % 15 === 0) {
+        if (i !== 0) {
+          const hasNextPage = await page.evaluate((pageNumber) => {
+            const anchors = Array.from(document.querySelectorAll("a.x14f"));
+            return anchors.some(
+              (a) => a.textContent.trim() === String(pageNumber)
+            );
+          }, i / 15 + 1);
+          if (!hasNextPage) {
+            logMessage("No more pages available, moving to next code.");
+            break;
+          }
         }
+        i / 15 >= 1 && (await navigateToPage(page, i / 15 + 1));
+        await typeAndSearch(page, 'input[id$="pt9:it8112::content"]', code);
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        await clickSearchButton(page);
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        maxRecord = await getMaxRecord(page);
       }
-      i / 15 >= 1 && (await navigateToPage(page, i / 15 + 1));
+      logMessage(`🚀 ~ processCompany ~ maxRecord: ${maxRecord}`);
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await page.waitForSelector("a.xgl", { timeout: 10000 });
+      const links = await page.$$("a.xgl");
+      const link = links[i % 15];
+      if (!link) continue;
+      await link.click();
+      await new Promise((resolve) => setTimeout(resolve, 5000));
+      const extractedData = await extractData(page, year, quarter);
+      if (extractedData?.length > 0) {
+        extractedValues = extractedData.map((item) => [
+          item.start ?? "",
+          item.end ?? "",
+        ]);
+        foundData = true;
+        logMessage(`✅ Page ${i + 1} has data, moving to next code.`);
+        break;
+      } else {
+        logMessage(`⚠️ Page ${i + 1} has no data, skipping`);
+      }
+      await page.goBack({ waitUntil: "domcontentloaded" });
       await typeAndSearch(page, 'input[id$="pt9:it8112::content"]', code);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
       await clickSearchButton(page);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      maxRecord = await getMaxRecord(page);
+      await page.waitForSelector("a.xgl");
+    } catch (err) {
+      logMessage(`❌ Error in processCompany loop for code ${code}: ${err.message}`);
+      continue;
     }
-
-    logMessage(`🚀 ~ processCompany ~ maxRecord: ${maxRecord}`);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    await page.waitForSelector("a.xgl", { timeout: 10000 });
-
-    const links = await page.$$("a.xgl");
-    const link = links[i % 15];
-
-    if (!link) continue;
-
-    await link.click();
-    await new Promise((resolve) => setTimeout(resolve, 5000));
-
-    const extractedData = await extractData(page, year, quarter);
-
-    if (extractedData?.length > 0) {
-      extractedValues = extractedData.map((item) => [
-        item.start ?? "",
-        item.end ?? "",
-      ]);
-      foundData = true;
-      logMessage(`✅ Page ${i + 1} has data, moving to next code.`);
-      break;
-    } else {
-      logMessage(`⚠️ Page ${i + 1} has no data, skipping`);
-    }
-
-    await page.goBack({ waitUntil: "domcontentloaded" });
-    await typeAndSearch(page, 'input[id$="pt9:it8112::content"]', code);
-    await clickSearchButton(page);
-    await page.waitForSelector("a.xgl");
   }
-
   // Write to file immediately if foundData
   if (foundData) {
     const filename = "BCTC.xlsx";
     const workbookFile = xlsx.readFile(filename);
-    const sheetName = workbookFile.SheetNames[0];
-    const sheet = workbookFile.Sheets[sheetName];
-    if (!sheet) {
-      logMessage(`❌ Sheet '${sheetName}' not found in ${filename}`);
+    // Sheet 1: CDKT
+    const sheet1 = workbookFile.Sheets[workbookFile.SheetNames[0]];
+    // Sheet 2: KQKD
+    const sheet2 = workbookFile.Sheets[workbookFile.SheetNames[1]];
+    // Sheet 3: LCTT
+    const sheet3 = workbookFile.Sheets[workbookFile.SheetNames[2]];
+    // Write to sheet 1 (CDKT) as before
+    if (!sheet1) {
+      logMessage(`❌ Sheet 1 not found in ${filename}`);
       return { foundData, extractedValues };
     }
-    const range = xlsx.utils.decode_range(sheet["!ref"]);
-    // Find next available column
+    let range = xlsx.utils.decode_range(sheet1["!ref"]);
     let col = 3;
     while (true) {
-      const cellRef = xlsx.utils.encode_cell({ c: col, r: 1 }); // check header row
-      if (!sheet[cellRef]) break;
+      const cellRef = xlsx.utils.encode_cell({ c: col, r: 1 });
+      if (!sheet1[cellRef]) break;
       col++;
     }
-    // Write header
     const headerCellStart = xlsx.utils.encode_cell({ c: col, r: 1 });
     const headerCellEnd = xlsx.utils.encode_cell({ c: col + 1, r: 1 });
-    sheet[headerCellStart] = { t: "s", v: code + " cuoi ky" };
-    sheet[headerCellEnd] = { t: "s", v: code + " dau ky" };
+    sheet1[headerCellStart] = { t: "s", v: code + " cuoi ky" };
+    sheet1[headerCellEnd] = { t: "s", v: code + " dau ky" };
     for (let i = 0; i < extractedValues.length; i++) {
       for (let j = 0; j < extractedValues[i].length; j++) {
         const cellRef = xlsx.utils.encode_cell({ c: col + j, r: i + 3 });
-        sheet[cellRef] = { t: "s", v: extractedValues[i][j] };
+        sheet1[cellRef] = { t: "s", v: extractedValues[i][j] };
       }
     }
     if (col + extractedValues[0].length - 1 > range.e.c) {
       range.e.c = col + extractedValues[0].length - 1;
-      sheet["!ref"] = xlsx.utils.encode_range(range);
+      sheet1["!ref"] = xlsx.utils.encode_range(range);
     }
-    xlsx.writeFile(workbookFile, filename);
-    logMessage(
-      `✅ Đã ghi file ${filename} cho mã ${code} (sheet: ${sheetName})`
-    );
+    // Extract and write to sheet 2 (KQKD)
+    if (sheet2) {
+      const kqkdData = await extractTabData(page, "pt2:KQKD::disAcr");
+      let range2 = xlsx.utils.decode_range(sheet2["!ref"]);
+      let col2 = 3;
+      while (true) {
+        const cellRef = xlsx.utils.encode_cell({ c: col2, r: 1 });
+        if (!sheet2[cellRef]) break;
+        col2++;
+      }
+      const headerCellStart2 = xlsx.utils.encode_cell({ c: col2, r: 1 });
+      const headerCellEnd2 = xlsx.utils.encode_cell({ c: col2 + 1, r: 1 });
+      sheet2[headerCellStart2] = { t: "s", v: code + " cuoi ky" };
+      sheet2[headerCellEnd2] = { t: "s", v: code + " dau ky" };
+      for (let i = 0; i < kqkdData.length; i++) {
+        for (let j = 0; j < kqkdData[i].length; j++) {
+          const cellRef = xlsx.utils.encode_cell({ c: col2 + j, r: i + 3 });
+          sheet2[cellRef] = { t: "s", v: kqkdData[i][j] };
+        }
+      }
+      if (col2 + 1 > range2.e.c) {
+        range2.e.c = col2 + 1;
+        sheet2["!ref"] = xlsx.utils.encode_range(range2);
+      }
+    }
+    // Extract and write to sheet 3 (LCTT)
+    if (sheet3) {
+      const lcttData = await extractTabData(page, "pt2:LCTT-GT::disAcr");
+      let range3 = xlsx.utils.decode_range(sheet3["!ref"]);
+      let col3 = 3;
+      while (true) {
+        const cellRef = xlsx.utils.encode_cell({ c: col3, r: 1 });
+        if (!sheet3[cellRef]) break;
+        col3++;
+      }
+      const headerCellStart3 = xlsx.utils.encode_cell({ c: col3, r: 1 });
+      const headerCellEnd3 = xlsx.utils.encode_cell({ c: col3 + 1, r: 1 });
+      sheet3[headerCellStart3] = { t: "s", v: code + " cuoi ky" };
+      sheet3[headerCellEnd3] = { t: "s", v: code + " dau ky" };
+      for (let i = 0; i < lcttData.length; i++) {
+        for (let j = 0; j < lcttData[i].length; j++) {
+          const cellRef = xlsx.utils.encode_cell({ c: col3 + j, r: i + 3 });
+          sheet3[cellRef] = { t: "s", v: lcttData[i][j] };
+        }
+      }
+      if (col3 + 1 > range3.e.c) {
+        range3.e.c = col3 + 1;
+        sheet3["!ref"] = xlsx.utils.encode_range(range3);
+      }
+    }
+    try {
+      xlsx.writeFile(workbookFile, filename);
+      logMessage(
+        `✅ Đã ghi file ${filename} cho mã ${code} (sheet: ${workbookFile.SheetNames[0]}, ${workbookFile.SheetNames[1]}, ${workbookFile.SheetNames[2]})`
+      );
+    } catch (err) {
+      logMessage(`❌ Error writing file ${filename} for code ${code}: ${err.message}`);
+    }
   }
   return { foundData, extractedValues };
 }
