@@ -2,6 +2,72 @@ import puppeteer from "puppeteer-core";
 import xlsx from "xlsx";
 import fs from "fs";
 
+// ==================== LOGGER ====================
+class Logger {
+  static log(message, level = "INFO") {
+    const timestamp = new Date().toISOString();
+    const logLine = `[${timestamp}] [${level}] ${message}\n`;
+    fs.appendFileSync("log.txt", logLine);
+    console.log(`[${level}] ${message}`);
+  }
+
+  static info(message) {
+    this.log(message, "INFO");
+  }
+
+  static error(message) {
+    this.log(message, "ERROR");
+  }
+
+  static success(message) {
+    this.log(message, "SUCCESS");
+  }
+
+  static warning(message) {
+    this.log(message, "WARNING");
+  }
+
+  static debug(message) {
+    this.log(message, "DEBUG");
+  }
+}
+
+// ==================== CONFIGURATION ====================
+const CONFIG = {
+  CHROME_PATH: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  BASE_URL: "https://congbothongtin.ssc.gov.vn/faces/NewsSearch",
+  TIMEOUTS: {
+    PAGE_LOAD: 10000,
+    ELEMENT_WAIT: 10000,
+    TAB_SWITCH: 2000,
+    SEARCH_DELAY: 1000,
+    NAVIGATION_DELAY: 5000,
+  },
+  SELECTORS: {
+    SEARCH_INPUT: 'input[id$="pt9:it8112::content"]',
+    SEARCH_BUTTON: 'div[id="pt9:b1"] a',
+    MAX_RECORD: 'span[id$="pt9:it4"]',
+    PAGINATION_LINKS: "a.x14f",
+    RESULT_LINKS: "a.xgl",
+    YEAR_SPAN: 'span[id="pt2:tt1:2:lookupValueId::content"]',
+    QUARTER_SPAN: 'span[id="pt2:tt1:3:lookupValueId::content"]',
+    MAIN_TABLE: 'div[id="pt2:t2::db"]',
+    KQKD_TABLE: 'div[id="pt2:t3::db"]',
+    LCTT_TABLE: 'div[id="pt2:t6::db"]',
+  },
+  TABS: {
+    KQKD: "pt2:KQKD::disAcr",
+    LCTT_GT: "pt2:LCTT-GT::disAcr",
+  },
+  EXCEL: {
+    INPUT_FILE: "codes.xlsx",
+    OUTPUT_FILE: "BCTC.xlsx",
+    COLUMN_E_INDEX: 4,
+    START_COLUMN: 3,
+    START_ROW: 3,
+  },
+};
+
 function getColumnEValues(filename) {
   const workbook = xlsx.readFile(filename);
   const sheetName = workbook.SheetNames[0];
@@ -27,7 +93,7 @@ async function typeAndSearch(page, selector, value) {
     await page.waitForSelector(selector);
     await page.type(selector, value);
   } catch (err) {
-    logMessage(`❌ Error in typeAndSearch: ${err.message}`);
+    Logger.error(`❌ Error in typeAndSearch: ${err.message}`);
   }
 }
 
@@ -41,7 +107,7 @@ async function clickSearchButton(page) {
       }
     });
   } catch (err) {
-    logMessage(`❌ Error in clickSearchButton: ${err.message}`);
+    Logger.error(`❌ Error in clickSearchButton: ${err.message}`);
   }
 }
 
@@ -56,7 +122,7 @@ async function getMaxRecord(page) {
     });
     return totalCount;
   } catch (err) {
-    logMessage(`❌ Error in getMaxRecord: ${err.message}`);
+    Logger.error(`❌ Error in getMaxRecord: ${err.message}`);
     return 0;
   }
 }
@@ -76,7 +142,7 @@ async function navigateToPage(page, pageNumber) {
       return false;
     }, pageNumber);
   } catch (err) {
-    logMessage(`❌ Error in navigateToPage: ${err.message}`);
+    Logger.error(`❌ Error in navigateToPage: ${err.message}`);
   }
 }
 
@@ -121,7 +187,7 @@ async function extractData(page, year, quarter) {
     );
     return extractedData;
   } catch (err) {
-    logMessage(`❌ Error in extractData: ${err.message}`);
+    Logger.error(`❌ Error in extractData: ${err.message}`);
     return [];
   }
 }
@@ -172,7 +238,7 @@ async function extractTabData(page, tabId) {
       if (tabId === "pt2:KQKD::disAcr") {
         const kqkdDiv = document.querySelector('div[id="pt2:KQKD"]');
         tableDiv = kqkdDiv?.querySelector('div[id="pt2:t3::db"]');
-        
+
         // For KQKD, handle the table structure
         if (tableDiv) {
           const tbody = tableDiv.querySelector("tbody");
@@ -180,8 +246,10 @@ async function extractTabData(page, tabId) {
             const rows = Array.from(tbody.querySelectorAll("tr"));
             return rows.map((row) => {
               const cells = row.querySelectorAll("td");
-              const col3 = cells[3]?.querySelector("span")?.textContent?.trim() || "-";
-              const col4 = cells[4]?.querySelector("span")?.textContent?.trim() || "-";
+              const col3 =
+                cells[3]?.querySelector("span")?.textContent?.trim() || "-";
+              const col4 =
+                cells[4]?.querySelector("span")?.textContent?.trim() || "-";
               return [col3 === "0" ? "-" : col3, col4 === "0" ? "-" : col4];
             });
           }
@@ -194,7 +262,7 @@ async function extractTabData(page, tabId) {
         );
         const lcttDiv = lcttBodyDiv?.querySelector('div[id="pt2:LCTT-GT"]');
         tableDiv = lcttDiv?.querySelector('div[id="pt2:t6::db"]');
-        
+
         // For LCTT-GT, the table structure is different - data is directly in tbody
         if (tableDiv) {
           const tbody = tableDiv.querySelector("tbody");
@@ -203,8 +271,10 @@ async function extractTabData(page, tabId) {
             return rows.map((row) => {
               const cells = row.querySelectorAll("td");
               // For LCTT-GT, we need columns 3 and 4 (index 3 and 4)
-              const col3 = cells[3]?.querySelector("span")?.textContent?.trim() || "-";
-              const col4 = cells[4]?.querySelector("span")?.textContent?.trim() || "-";
+              const col3 =
+                cells[3]?.querySelector("span")?.textContent?.trim() || "-";
+              const col4 =
+                cells[4]?.querySelector("span")?.textContent?.trim() || "-";
               return [col3 === "0" ? "-" : col3, col4 === "0" ? "-" : col4];
             });
           }
@@ -220,10 +290,11 @@ async function extractTabData(page, tabId) {
       let rows;
       // For other tabs, skip the first row (header)
       rows = Array.from(tbody.querySelectorAll("tr")).slice(1);
-      logMessage(`🚀 ~ returnawaitpage.evaluate ~ rows: ${JSON.stringify(rows)}`);
+      Logger.info(
+        `🚀 ~ returnawaitpage.evaluate ~ rows: ${JSON.stringify(rows)}`
+      );
       return rows.map((row) => {
         const cells = row.querySelectorAll("td");
-        // For CDKT, we need columns 3 and 4 (index 3 and 4) - "Cuối kỳ" and "Đầu kỳ"
         const col3 =
           cells[3]?.querySelector("span")?.textContent?.trim() || "-";
         const col4 =
@@ -232,26 +303,19 @@ async function extractTabData(page, tabId) {
       });
     }, tabId);
   } catch (err) {
-    logMessage(`❌ Error in extractTabData for tab ${tabId}: ${err.message}`);
+    Logger.error(`❌ Error in extractTabData for tab ${tabId}: ${err.message}`);
     return [];
   }
 }
 
-function logMessage(message) {
-  const timestamp = new Date().toISOString();
-  const logLine = `[${timestamp}] ${message}\n`;
-  fs.appendFileSync("log.txt", logLine);
-  console.log(message);
-}
-
 async function processCompany(page, code, year, quarter) {
-  logMessage(`PROCESSING CODE: ${code}`);
+  Logger.info(`PROCESSING CODE: ${code}`);
   try {
     await page.goto("https://congbothongtin.ssc.gov.vn/faces/NewsSearch", {
       waitUntil: "domcontentloaded",
     });
   } catch (err) {
-    logMessage(`❌ Error in page.goto for code ${code}: ${err.message}`);
+    Logger.error(`❌ Error in page.goto for code ${code}: ${err.message}`);
     return { foundData: false, extractedValues: [] };
   }
   let maxRecord = 10;
@@ -259,7 +323,7 @@ async function processCompany(page, code, year, quarter) {
   try {
     await page.waitForSelector("a.xgl", { timeout: 10000 });
   } catch (err) {
-    logMessage(
+    Logger.error(
       `❌ Error waiting for selector a.xgl for code ${code}: ${err.message}`
     );
     return { foundData: false, extractedValues: [] };
@@ -277,7 +341,7 @@ async function processCompany(page, code, year, quarter) {
             );
           }, i / 15 + 1);
           if (!hasNextPage) {
-            logMessage("No more pages available, moving to next code.");
+            Logger.info("No more pages available, moving to next code.");
             break;
           }
         }
@@ -288,7 +352,7 @@ async function processCompany(page, code, year, quarter) {
         await new Promise((resolve) => setTimeout(resolve, 1000));
         maxRecord = await getMaxRecord(page);
       }
-      logMessage(`🚀 ~ processCompany ~ maxRecord: ${maxRecord}`);
+      Logger.info(`🚀 ~ processCompany ~ maxRecord: ${maxRecord}`);
       await new Promise((resolve) => setTimeout(resolve, 1000));
       await page.waitForSelector("a.xgl", { timeout: 10000 });
       const links = await page.$$("a.xgl");
@@ -303,17 +367,17 @@ async function processCompany(page, code, year, quarter) {
           item.end ?? "",
         ]);
         foundData = true;
-        logMessage(`✅ Page ${i + 1} has data, moving to next code.`);
+        Logger.info(`✅ Page ${i + 1} has data, moving to next code.`);
         break;
       } else {
-        logMessage(`⚠️ Page ${i + 1} has no data, skipping`);
+        Logger.warning(`⚠️ Page ${i + 1} has no data, skipping`);
       }
       await page.goBack({ waitUntil: "domcontentloaded" });
       await typeAndSearch(page, 'input[id$="pt9:it8112::content"]', code);
       await clickSearchButton(page);
       await page.waitForSelector("a.xgl");
     } catch (err) {
-      logMessage(
+      Logger.error(
         `❌ Error in processCompany loop for code ${code}: ${err.message}`
       );
       continue;
@@ -328,7 +392,7 @@ async function processCompany(page, code, year, quarter) {
     const sheet3 = workbookFile.Sheets[workbookFile.SheetNames[2]];
 
     if (!sheet1) {
-      logMessage(`❌ Sheet 1 not found in ${filename}`);
+      Logger.error(`❌ Sheet 1 not found in ${filename}`);
       return { foundData, extractedValues };
     }
     let range = xlsx.utils.decode_range(sheet1["!ref"]);
@@ -404,11 +468,11 @@ async function processCompany(page, code, year, quarter) {
     }
     try {
       xlsx.writeFile(workbookFile, filename);
-      logMessage(
+      Logger.info(
         `✅ Đã ghi file ${filename} cho mã ${code} (sheet: ${workbookFile.SheetNames[0]}, ${workbookFile.SheetNames[1]}, ${workbookFile.SheetNames[2]})`
       );
     } catch (err) {
-      logMessage(
+      Logger.error(
         `❌ Error writing file ${filename} for code ${code}: ${err.message}`
       );
     }
@@ -418,9 +482,7 @@ async function processCompany(page, code, year, quarter) {
 
 async function main(inputList, year, quarter) {
   const browser = await puppeteer.launch({
-    executablePath:
-      "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", // Điều chỉnh nếu dùng OS khác
-    headless: false,
+    executablePath: CONFIG.CHROME_PATH,
     defaultViewport: null,
   });
 
@@ -436,16 +498,17 @@ async function main(inputList, year, quarter) {
     const { foundData } = await processCompany(page, code, year, quarter);
     if (foundData) found++;
     else notFound++;
-    logMessage(
+    Logger.info(
       `PROGRESS: Checked ${checked}/${inputList.length}. Found: ${found}. Not found: ${notFound}.`
     );
   }
 
-  logMessage(
+  Logger.info(
     `SUMMARY: Checked ${checked} codes. Found data: ${found}. Not found: ${notFound}. Total: ${inputList.length}`
   );
   await browser.close();
 }
 
-main(input.slice(1), 2024, 4);
+main(input, 2024, 4);
+// main(input.slice(1), 2024, 4);
 // main(input.slice(0, 10), 2024, 4);
