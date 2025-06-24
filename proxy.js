@@ -171,15 +171,27 @@ async function extractTabData(page, tabId) {
       let tableDiv;
       if (tabId === "pt2:KQKD::disAcr") {
         const kqkdDiv = document.querySelector('div[id="pt2:KQKD"]');
-        console.log("KQKD div found:", !!kqkdDiv);
         tableDiv = kqkdDiv?.querySelector('div[id="pt2:t3::db"]');
-        console.log("KQKD table div found:", !!tableDiv);
+        
+        // For KQKD, handle the table structure
+        if (tableDiv) {
+          const tbody = tableDiv.querySelector("tbody");
+          if (tbody) {
+            const rows = Array.from(tbody.querySelectorAll("tr"));
+            return rows.map((row) => {
+              const cells = row.querySelectorAll("td");
+              const col3 = cells[3]?.querySelector("span")?.textContent?.trim() || "-";
+              const col4 = cells[4]?.querySelector("span")?.textContent?.trim() || "-";
+              return [col3 === "0" ? "-" : col3, col4 === "0" ? "-" : col4];
+            });
+          }
+        }
+        return [];
       } else if (tabId === "pt2:LCTT-GT::disAcr") {
         // For LCTT-GT tab, look for table inside the LCTT-GT div
         const lcttBodyDiv = document.querySelector(
           'div[id="pt2:LCTT-GT::body"]'
         );
-        console.log("LCTT body div found:", !!lcttBodyDiv);
         const lcttDiv = lcttBodyDiv?.querySelector('div[id="pt2:LCTT-GT"]');
         tableDiv = lcttDiv?.querySelector('div[id="pt2:t6::db"]');
         
@@ -188,7 +200,6 @@ async function extractTabData(page, tabId) {
           const tbody = tableDiv.querySelector("tbody");
           if (tbody) {
             const rows = Array.from(tbody.querySelectorAll("tr"));
-            console.log("LCTT rows found:", rows.length);
             return rows.map((row) => {
               const cells = row.querySelectorAll("td");
               // For LCTT-GT, we need columns 3 and 4 (index 3 and 4)
@@ -207,16 +218,12 @@ async function extractTabData(page, tabId) {
       const tbody = tableDiv.querySelector("tbody");
       if (!tbody) return [];
       let rows;
-      if (tabId === "pt2:KQKD::disAcr") {
-        // For KQKD tab, include all rows (don't skip first row)
-        rows = Array.from(tbody.querySelectorAll("tr"));
-      } else {
-        // For other tabs, skip the first row (header)
-        rows = Array.from(tbody.querySelectorAll("tr")).slice(1);
-      }
+      // For other tabs, skip the first row (header)
+      rows = Array.from(tbody.querySelectorAll("tr")).slice(1);
       logMessage(`🚀 ~ returnawaitpage.evaluate ~ rows: ${JSON.stringify(rows)}`);
       return rows.map((row) => {
         const cells = row.querySelectorAll("td");
+        // For CDKT, we need columns 3 and 4 (index 3 and 4) - "Cuối kỳ" and "Đầu kỳ"
         const col3 =
           cells[3]?.querySelector("span")?.textContent?.trim() || "-";
         const col4 =
@@ -259,7 +266,7 @@ async function processCompany(page, code, year, quarter) {
   }
   let foundData = false;
   let extractedValues = [];
-  for (let i = 2; i < maxRecord || currentPage <= 4; i++) {
+  for (let i = 0; i < maxRecord || currentPage <= 4; i++) {
     try {
       if (i === 0 || (i + 1) % 15 === 0) {
         if (i !== 0) {
@@ -316,13 +323,10 @@ async function processCompany(page, code, year, quarter) {
   if (foundData) {
     const filename = "BCTC.xlsx";
     const workbookFile = xlsx.readFile(filename);
-    // Sheet 1: CDKT
     const sheet1 = workbookFile.Sheets[workbookFile.SheetNames[0]];
-    // Sheet 2: KQKD
     const sheet2 = workbookFile.Sheets[workbookFile.SheetNames[1]];
-    // Sheet 3: LCTT
     const sheet3 = workbookFile.Sheets[workbookFile.SheetNames[2]];
-    // Write to sheet 1 (CDKT) as before
+
     if (!sheet1) {
       logMessage(`❌ Sheet 1 not found in ${filename}`);
       return { foundData, extractedValues };
@@ -348,7 +352,7 @@ async function processCompany(page, code, year, quarter) {
       range.e.c = col + extractedValues[0].length - 1;
       sheet1["!ref"] = xlsx.utils.encode_range(range);
     }
-    // Extract and write to sheet 2 (KQKD)
+
     if (sheet2) {
       const kqkdData = await extractTabData(page, "pt2:KQKD::disAcr");
       let range2 = xlsx.utils.decode_range(sheet2["!ref"]);
@@ -373,7 +377,7 @@ async function processCompany(page, code, year, quarter) {
         sheet2["!ref"] = xlsx.utils.encode_range(range2);
       }
     }
-    // Extract and write to sheet 3 (LCTT)
+
     if (sheet3) {
       const lcttData = await extractTabData(page, "pt2:LCTT-GT::disAcr");
       let range3 = xlsx.utils.decode_range(sheet3["!ref"]);
@@ -412,7 +416,6 @@ async function processCompany(page, code, year, quarter) {
   return { foundData, extractedValues };
 }
 
-// Main orchestrator
 async function main(inputList, year, quarter) {
   const browser = await puppeteer.launch({
     executablePath:
