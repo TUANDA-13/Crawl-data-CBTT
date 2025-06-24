@@ -181,9 +181,7 @@ async function extractTabData(page, tabId) {
         );
         console.log("LCTT body div found:", !!lcttBodyDiv);
         const lcttDiv = lcttBodyDiv?.querySelector('div[id="pt2:LCTT-GT"]');
-        console.log("LCTT div found:", !!lcttDiv);
-        tableDiv = lcttDiv?.querySelector('div[id="pt2:t6"]');
-        console.log("LCTT table div found:", !!tableDiv);
+        tableDiv = lcttDiv?.querySelector('div[id="pt2:t6::db"]');
         
         // For LCTT-GT, the table structure is different - data is directly in tbody
         if (tableDiv) {

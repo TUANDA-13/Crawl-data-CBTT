@@ -1,0 +1,142 @@
+[2025-06-24T04:04:09.336Z] PROCESSING CODE: AAA
+[2025-06-24T04:04:14.419Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:04:20.492Z] ⚠️ Page 3 has no data, skipping
+[2025-06-24T04:04:25.260Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:04:31.308Z] ✅ Page 4 has data, moving to next code.
+[2025-06-24T04:04:33.338Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:04:35.374Z] ✅ Đã ghi file BCTC.xlsx cho mã AAA (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:04:35.376Z] PROGRESS: Checked 1/1581. Found: 1. Not found: 0.
+[2025-06-24T04:04:35.377Z] PROCESSING CODE: AAH
+[2025-06-24T04:04:36.282Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:04:42.337Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:04:44.382Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:04:46.413Z] ✅ Đã ghi file BCTC.xlsx cho mã AAH (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:04:46.414Z] PROGRESS: Checked 2/1581. Found: 2. Not found: 0.
+[2025-06-24T04:04:46.416Z] PROCESSING CODE: AAM
+[2025-06-24T04:04:47.284Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:04:53.356Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:04:55.409Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:04:57.455Z] ✅ Đã ghi file BCTC.xlsx cho mã AAM (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:04:57.458Z] PROGRESS: Checked 3/1581. Found: 3. Not found: 0.
+[2025-06-24T04:04:57.459Z] PROCESSING CODE: AAT
+[2025-06-24T04:04:58.457Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:17:45.874Z] PROCESSING CODE: AAA
+[2025-06-24T04:17:51.605Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:17:57.695Z] ⚠️ Page 3 has no data, skipping
+[2025-06-24T04:18:03.259Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:18:09.324Z] ✅ Page 4 has data, moving to next code.
+[2025-06-24T04:18:11.380Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:18:13.417Z] ✅ Đã ghi file BCTC.xlsx cho mã AAA (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:18:13.418Z] PROGRESS: Checked 1/1581. Found: 1. Not found: 0.
+[2025-06-24T04:18:13.421Z] PROCESSING CODE: AAH
+[2025-06-24T04:18:14.337Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:18:20.395Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:18:22.432Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:18:24.477Z] ✅ Đã ghi file BCTC.xlsx cho mã AAH (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:18:24.478Z] PROGRESS: Checked 2/1581. Found: 2. Not found: 0.
+[2025-06-24T04:18:24.479Z] PROCESSING CODE: AAM
+[2025-06-24T04:18:25.431Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:18:31.533Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:18:33.581Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:18:35.636Z] ✅ Đã ghi file BCTC.xlsx cho mã AAM (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:18:35.638Z] PROGRESS: Checked 3/1581. Found: 3. Not found: 0.
+[2025-06-24T04:18:35.639Z] PROCESSING CODE: AAT
+[2025-06-24T04:18:36.621Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:18:42.731Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:18:44.781Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:18:46.801Z] ✅ Đã ghi file BCTC.xlsx cho mã AAT (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:18:46.803Z] PROGRESS: Checked 4/1581. Found: 4. Not found: 0.
+[2025-06-24T04:18:46.804Z] PROCESSING CODE: AAV
+[2025-06-24T04:18:47.697Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:18:53.755Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:18:55.810Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:18:57.840Z] ✅ Đã ghi file BCTC.xlsx cho mã AAV (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:18:57.841Z] PROGRESS: Checked 5/1581. Found: 5. Not found: 0.
+[2025-06-24T04:18:57.841Z] PROCESSING CODE: ABB
+[2025-06-24T04:18:58.796Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:19:04.842Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:19:06.874Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:19:08.907Z] ✅ Đã ghi file BCTC.xlsx cho mã ABB (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:19:08.909Z] PROGRESS: Checked 6/1581. Found: 6. Not found: 0.
+[2025-06-24T04:19:08.911Z] PROCESSING CODE: ABC
+[2025-06-24T04:19:09.878Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:19:15.925Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:19:17.968Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:24:34.959Z] PROCESSING CODE: AAA
+[2025-06-24T04:24:40.491Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:24:46.628Z] ⚠️ Page 3 has no data, skipping
+[2025-06-24T04:24:51.445Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:24:57.522Z] ✅ Page 4 has data, moving to next code.
+[2025-06-24T04:24:59.564Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:25:01.604Z] ✅ Đã ghi file BCTC.xlsx cho mã AAA (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:25:01.605Z] PROGRESS: Checked 1/1581. Found: 1. Not found: 0.
+[2025-06-24T04:25:01.607Z] PROCESSING CODE: AAH
+[2025-06-24T04:25:02.441Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:25:08.529Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:25:10.596Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:25:12.644Z] ✅ Đã ghi file BCTC.xlsx cho mã AAH (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:25:12.646Z] PROGRESS: Checked 2/1581. Found: 2. Not found: 0.
+[2025-06-24T04:25:12.647Z] PROCESSING CODE: AAM
+[2025-06-24T04:25:13.641Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:25:19.709Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:25:21.760Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:25:23.794Z] ✅ Đã ghi file BCTC.xlsx cho mã AAM (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:25:23.796Z] PROGRESS: Checked 3/1581. Found: 3. Not found: 0.
+[2025-06-24T04:25:23.797Z] PROCESSING CODE: AAT
+[2025-06-24T04:25:24.718Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:25:30.807Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:25:32.849Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:25:34.884Z] ✅ Đã ghi file BCTC.xlsx cho mã AAT (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:25:34.886Z] PROGRESS: Checked 4/1581. Found: 4. Not found: 0.
+[2025-06-24T04:25:34.887Z] PROCESSING CODE: AAV
+[2025-06-24T04:25:35.831Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:25:41.879Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:25:43.934Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:25:45.972Z] ✅ Đã ghi file BCTC.xlsx cho mã AAV (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:25:45.974Z] PROGRESS: Checked 5/1581. Found: 5. Not found: 0.
+[2025-06-24T04:25:45.976Z] PROCESSING CODE: ABB
+[2025-06-24T04:25:47.030Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:25:53.096Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:25:55.147Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:25:57.183Z] ✅ Đã ghi file BCTC.xlsx cho mã ABB (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:25:57.185Z] PROGRESS: Checked 6/1581. Found: 6. Not found: 0.
+[2025-06-24T04:25:57.186Z] PROCESSING CODE: ABC
+[2025-06-24T04:25:57.985Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:26:04.062Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:26:06.118Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:26:08.155Z] ✅ Đã ghi file BCTC.xlsx cho mã ABC (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:26:08.157Z] PROGRESS: Checked 7/1581. Found: 7. Not found: 0.
+[2025-06-24T04:26:08.158Z] PROCESSING CODE: ABI
+[2025-06-24T04:26:08.936Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:26:15.000Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:26:17.053Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:26:19.079Z] ✅ Đã ghi file BCTC.xlsx cho mã ABI (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:26:19.082Z] PROGRESS: Checked 8/1581. Found: 8. Not found: 0.
+[2025-06-24T04:26:19.084Z] PROCESSING CODE: ABR
+[2025-06-24T04:26:20.011Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:26:26.065Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:26:28.109Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:26:30.143Z] ✅ Đã ghi file BCTC.xlsx cho mã ABR (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:26:30.144Z] PROGRESS: Checked 9/1581. Found: 9. Not found: 0.
+[2025-06-24T04:26:30.145Z] PROCESSING CODE: ABS
+[2025-06-24T04:26:31.070Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:26:37.125Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:26:39.167Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:26:41.191Z] ✅ Đã ghi file BCTC.xlsx cho mã ABS (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:26:41.192Z] PROGRESS: Checked 10/1581. Found: 10. Not found: 0.
+[2025-06-24T04:26:41.193Z] PROCESSING CODE: ABT
+[2025-06-24T04:26:42.002Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:26:48.053Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:26:50.097Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:26:52.121Z] ✅ Đã ghi file BCTC.xlsx cho mã ABT (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:26:52.122Z] PROGRESS: Checked 11/1581. Found: 11. Not found: 0.
+[2025-06-24T04:26:52.123Z] PROCESSING CODE: ACB
+[2025-06-24T04:26:52.925Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:26:58.970Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:27:01.013Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
+[2025-06-24T04:27:03.047Z] ✅ Đã ghi file BCTC.xlsx cho mã ACB (sheet: BCTC, KQKD, LCTT)
+[2025-06-24T04:27:03.048Z] PROGRESS: Checked 12/1581. Found: 12. Not found: 0.
+[2025-06-24T04:27:03.049Z] PROCESSING CODE: ACC
+[2025-06-24T04:27:03.866Z] 🚀 ~ processCompany ~ maxRecord: 10
+[2025-06-24T04:27:09.909Z] ✅ Page 3 has data, moving to next code.
+[2025-06-24T04:27:11.941Z] ❌ Error in extractTabData for tab pt2:KQKD::disAcr: logMessage is not defined
